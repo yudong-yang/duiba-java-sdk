@@ -46,7 +46,7 @@ public class CreditTool {
 	 * @return 自动登录的url地址
 	 */
 	public String buildAutoLoginRequest( String uid, Long credits, String dbredirect){
-		String url="https://home.m.duiba.com.cn/autoLogin/autologin?";
+		String url="https://activity.m.duiba.com.cn/autoLogin/autologin?";
 		Map<String, String> params=new HashMap<String, String>();
 		params.put("uid", uid);
 		params.put("credits", credits+"");
@@ -70,7 +70,7 @@ public class CreditTool {
 		if(bizId==null){
 			bizId="";
 		}
-		String url="http://www.duiba.com.cn/status/orderStatus?";
+		String url="https://activity.m.duiba.com.cn/status/orderStatus?";
 		Map<String, String> params=new HashMap<String, String>();
 		params.put("orderNum", orderNum);
 		params.put("bizId", bizId);
@@ -83,7 +83,7 @@ public class CreditTool {
 	 * @return 发起请求的url
 	 */
 	public String buildCreditAuditRequest(CreditAuditParams params){
-		String url="http://www.duiba.com.cn/audit/apiAudit?";
+		String url="https://activity.m.duiba.com.cn/audit/apiAudit?";
 		Map<String, String> signParams=new HashMap<String, String>();
 		if(params.getPassOrderNums()!=null && params.getPassOrderNums().size()>0){
 			String s=null;
@@ -120,7 +120,7 @@ public class CreditTool {
 	 * @return
 	 */
 	public String buildCreditConfirmRequest(CreditConfirmParams p){
-		String url="http://www.duiba.com.cn/confirm/confirm?";
+		String url="https://activity.m.duiba.com.cn/confirm/confirm?";
 		Map<String, String> params=new HashMap<String, String>();
 		params.put("success", p.isSuccess()+"");
 		params.put("errorMessage", p.getErrorMessage());
@@ -141,7 +141,7 @@ public class CreditTool {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("count", count);
 		String url = buildUrlWithSign(
-				"http://www.duiba.com.cn/queryForFrontItem/query?", params);
+				"https://activity.m.duiba.com.cn/queryForFrontItem/query?", params);
 		return url;
 	}
 	
@@ -185,7 +185,7 @@ public class CreditTool {
 		
 		params.put("orderNums", orders.deleteCharAt(orders.length()-1).toString());
 		String url = buildUrlWithSign(
-				"http://www.duiba.com.cn/sendObject/batchCancel?", params);
+				"https://activity.m.duiba.com.cn/sendObject/batchCancel?", params);
 		return url;
 	}
 
@@ -208,7 +208,7 @@ public class CreditTool {
 		expressInfo.deleteCharAt(expressInfo.length()-1);
 		params.put("expressInfo", expressInfo.toString());
 		String url = buildUrlWithSign(
-				"http://www.duiba.com.cn/sendObject/batchSend?", params);
+				"https://activity.m.duiba.com.cn/sendObject/batchSend?", params);
 		return url;
 	}			
 	

@@ -18,7 +18,7 @@ public class test {
 		String url = tool.queryForFrontItem("5");
 
 		System.out.println(url);
-		String urls = "https://www.duiba.com.cn/test/assableurl?vv=cc";
+		String urls = "https://activity.m.duiba.com.cn/test/assableurl?vv=cc";
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("aa","张三");
 		params.put("bb","sdsd");
